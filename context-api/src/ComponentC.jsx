@@ -1,12 +1,12 @@
 import React from 'react';
-import ThemeContext from './ThemeContext';
+import ThemeContext from './context/ThemeContext';
 
 const C = () => (
   <ThemeContext.Consumer>
     {context => (
       <React.Fragment>
-        <p>Age: {context.age}</p>
-        <p>Name: {context.name}</p>
+        <p>Age: {context.state.age}</p>
+        <p>Name: {context.state.name}</p>
       </React.Fragment>
     )}
   </ThemeContext.Consumer>

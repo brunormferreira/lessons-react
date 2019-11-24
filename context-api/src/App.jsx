@@ -1,5 +1,5 @@
 import React from 'react';
-import MyProvider from './ProviderA';
+import MyProvider from './context/ProviderA';
 import './App.css';
 
 import B from './ComponentB';
