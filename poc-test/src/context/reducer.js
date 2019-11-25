@@ -5,14 +5,27 @@ const reducer = (state, action) => {
     case 'INCREMENT':
       return {
         ...state,
-        count: payload
+        count: state.count + payload
       }
 
     case 'DECREMENT':
       return {
         ...state,
-        count: payload
+        count: state.count - payload
       }
+      
+    case 'INCREMENT_ONE':
+      return {
+        ...state,
+        count: state.count + 1
+      }
+
+    case 'DECREMENT_ONE':
+      return {
+        ...state,
+        count: state.count - 1
+      }
+
 
     default:
       return state
