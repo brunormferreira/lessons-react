@@ -1,0 +1,11 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "db": "json-server --watch db.json --port 3001"
+  },
+  "author": "Bruno Ramires",
+  "license": "ISC"
+}

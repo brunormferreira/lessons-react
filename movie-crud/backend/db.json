@@ -1,0 +1,20 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "title": "X-MEN: APOCALYPSE",
+      "genre": "action",
+      "year": "2016",
+      "producer": "Fox",
+      "poster": "https://upload.wikimedia.org/wikipedia/pt/thumb/e/e6/Xmen_apocalypse_ver18.jpg/250px-Xmen_apocalypse_ver18.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Deadpool 2",
+      "genre": "action",
+      "year": "2016",
+      "producer": "Fox",
+      "poster": "http://br.web.img3.acsta.net/c_215_290/pictures/18/04/19/15/31/2232385.jpg"
+    }
+  ]
+}
