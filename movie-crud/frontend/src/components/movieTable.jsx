@@ -1,7 +1,7 @@
 import React from 'react';
 import './movieTable.css';
 
-const MovieTable = () => (
+const MovieTable = props => (
   <table>
     <thead>
       <tr>
@@ -12,16 +12,24 @@ const MovieTable = () => (
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>Batman</td>
-        <td>Action</td>
-        <td>1989</td>
-        <td>Mr. Test</td>
-        <td>
-          <button className="button muted-button">Edit</button>
-          <button className="button muted-button">Delete</button>
-        </td>
-      </tr>
+    {props.movies.length > 0 ? (
+        props.movies.map(movie => (
+          <tr key={movie.id}>
+            <td>{movie.title}</td>
+            <td>{movie.genre}</td>
+            <td>{movie.year}</td>
+            <td>{movie.producer}</td>
+            <td>
+              <button className="button muted-button">Edit</button>
+              <button className="button muted-button">Delete</button>
+            </td>
+          </tr>
+        ))
+      ) : (
+        <tr>
+          <td colSpan={3}>No movies</td>
+        </tr>
+      )}
     </tbody>
   </table>
 )
