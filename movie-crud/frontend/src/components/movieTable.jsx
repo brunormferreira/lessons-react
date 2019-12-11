@@ -5,16 +5,21 @@ const MovieTable = props => (
   <table>
     <thead>
       <tr>
+        <th>Poster</th>
         <th>Title</th>
         <th>Genre</th>
         <th>Year</th>
         <th>Producer</th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
     {props.movies.length > 0 ? (
         props.movies.map(movie => (
           <tr key={movie.id}>
+            <td>
+              <img src={movie.poster} alt={movie.title} />
+            </td>
             <td>{movie.title}</td>
             <td>{movie.genre}</td>
             <td>{movie.year}</td>

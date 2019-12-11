@@ -15,8 +15,7 @@
   margin-right: 5px;
 }
 
-.muted-button,
-a.muted-button {
+.muted-button {
   background: transparent;
   border: 1px solid #cdcdcd;
   color: #4e4e4e; 
@@ -31,4 +30,11 @@ a.muted-button {
 
 th, td {
   border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  text-align: center;
+}
+
+td > img {
+  height: 100px; 
+  width: 70px;
 }
