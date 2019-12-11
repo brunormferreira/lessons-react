@@ -16,7 +16,6 @@
 }
 
 .muted-button {
-  background: transparent;
   border: 1px solid #cdcdcd;
   color: #4e4e4e; 
 }
@@ -25,7 +24,6 @@
 .muted-button:active {
   color: #4e4e4e;
   border: 1px solid #818181;
-  background: transparent; 
 }
 
 th, td {

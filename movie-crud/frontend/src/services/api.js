@@ -1,9 +1,13 @@
 import axios from 'axios';
 
-const pathUrl = 'http://localhost:3001/movies'
+const pathUrl = '/movies'
+
+const axiosInstance = axios.create({
+  baseURL: 'http://localhost:3001/'
+});
 
 const getAllMovies = async () => {
-  return axios
+  return axiosInstance
     .get(pathUrl)
     .then(({ data }) => data)
 }
