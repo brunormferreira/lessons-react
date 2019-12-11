@@ -12,4 +12,10 @@ const getAllMovies = async () => {
     .then(({ data }) => data)
 }
 
-export { getAllMovies }
+const saveMovies = async (movieObject) => {
+  return axiosInstance
+    .post(pathUrl, movieObject)
+    .then(({ data }) => data)
+}
+
+export { getAllMovies, saveMovies }
