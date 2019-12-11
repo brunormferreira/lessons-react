@@ -18,12 +18,9 @@ const App = () => {
 
   // const addMovie = (event) => {
   //   event.preventDefault()
-  //   const movieObject = {
-  //     newMovie
-  //   }
-    
+  //
   //   MoviesServices
-  //   .saveMovies(movieObject)
+  //   .saveMovies(newMovie)
   //   .then(data => {
   //       setMovies(movies.concat(data))
   //       setNewMovie([])
@@ -31,8 +28,12 @@ const App = () => {
   //   }
     
   // const handleMovieChange = (event) => {
-  //   const { id, title, genre, year, producer, poster, value } = event.target
-  //   setNewMovie(event.target.value)
+  //   const { id, title, genre, year, producer, poster, value } = event.target // WRONG
+  //
+  //   const objectMovie = {}
+  //   
+  //   setNewMovie(objectMovie)
+  //   Create an object to pass as a value in the setNewMovie
   // }
   // Read => https://stackoverflow.com/questions/54159255/display-data-from-axios-post-request-in-react-using-hooks
 
