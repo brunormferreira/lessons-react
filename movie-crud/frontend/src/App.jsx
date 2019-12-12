@@ -28,7 +28,17 @@ const App = () => {
     // if (!newMovie.title || !newMovie.genre || !newMovie.year) return
     setNewMovie(initialFormState)
   }
-    
+  
+  const deleteMovie = (id) => {
+    MoviesServices
+      .deleteMovieById(id)
+      .then(() => {
+        const updatedMovies = movies.filter(movie => movie.id !== id)
+
+        setMovies(updatedMovies)
+      })
+    }
+
   const handleMovieChange = (event) => {
     const { name, value } = event.target
 
@@ -62,12 +72,12 @@ const App = () => {
             <label htmlFor="poster">Url Poster</label>
             <input type="text" value={newMovie.poster} onChange={handleMovieChange} name="poster" />
             <hr />
-            <button className="button muted-button" type="submit">Save</button>
+            <button className="button basic-button" type="submit">Save</button>
           </form>
         </div>
         <div className="flex-large">
           <h2>View movies</h2>
-          <MovieTable movies={movies} />
+          <MovieTable movies={movies} deleteMovie={deleteMovie} />
         </div>
       </div>
     </div>

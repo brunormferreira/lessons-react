@@ -25,8 +25,8 @@ const MovieTable = props => (
             <td>{movie.year}</td>
             <td>{movie.producer}</td>
             <td>
-              <button className="button muted-button">Edit</button>
-              <button className="button muted-button">Delete</button>
+              <button className="button basic-button">Edit</button>
+              <button onClick={() => props.deleteMovie(movie.id)} className="button basic-button">Delete</button>
             </td>
           </tr>
         ))

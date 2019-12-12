@@ -1,10 +1,6 @@
-import axios from 'axios';
+import axiosInstance from './config'
 
 const pathUrl = '/movies'
-
-const axiosInstance = axios.create({
-  baseURL: 'http://localhost:3001/'
-});
 
 const getAllMovies = async () => {
   return axiosInstance
@@ -18,4 +14,10 @@ const saveMovies = async (movieObject) => {
     .then(({ data }) => data)
 }
 
-export { getAllMovies, saveMovies }
+const deleteMovieById = async (id) => {
+  return axiosInstance
+    .delete(`${pathUrl}/${id}`)
+    .then(({ data }) => data)
+}
+
+export { getAllMovies, saveMovies, deleteMovieById }

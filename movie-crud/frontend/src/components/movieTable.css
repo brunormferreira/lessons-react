@@ -15,13 +15,13 @@
   margin-right: 5px;
 }
 
-.muted-button {
+.basic-button {
   border: 1px solid #cdcdcd;
   color: #4e4e4e; 
 }
 
-.muted-button:hover,
-.muted-button:active {
+.basic-button:hover,
+.basic-button:active {
   color: #4e4e4e;
   border: 1px solid #818181;
 }
