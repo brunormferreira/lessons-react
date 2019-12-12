@@ -5,8 +5,9 @@ import MovieTable from './components/movieTable';
 import * as MoviesServices from './services/api'
 
 const App = () => {
+  const initialFormState = { id: null, title: '', genre: '', year: '', producer: '', poster: '' }
   const [movies, setMovies] = useState([])
-  // const [newMovie, setNewMovie] = useState([])
+  const [newMovie, setNewMovie] = useState(initialFormState)
 
   useEffect(() => {
     MoviesServices
@@ -16,26 +17,28 @@ const App = () => {
     })
   }, [])
 
-  // const addMovie = (event) => {
-  //   event.preventDefault()
-  //
-  //   MoviesServices
-  //   .saveMovies(newMovie)
-  //   .then(data => {
-  //       setMovies(movies.concat(data))
-  //       setNewMovie([])
-  //     })
-  //   }
+  const addMovie = (event) => {
+    event.preventDefault()
+    MoviesServices
+      .saveMovies(newMovie)
+      .then(data => {
+        setMovies(movies.concat(data))
+    })
+
+    // if (!newMovie.title || !newMovie.genre || !newMovie.year) return
+    setNewMovie(initialFormState)
+  }
     
-  // const handleMovieChange = (event) => {
-  //   const { id, title, genre, year, producer, poster, value } = event.target // WRONG
-  //
-  //   const objectMovie = {}
-  //   
-  //   setNewMovie(objectMovie)
-  //   Create an object to pass as a value in the setNewMovie
-  // }
-  // Read => https://stackoverflow.com/questions/54159255/display-data-from-axios-post-request-in-react-using-hooks
+  const handleMovieChange = (event) => {
+    const { name, value } = event.target
+
+    const objectMovie = {
+      ...newMovie,
+      [name]: value,
+    }
+
+    setNewMovie(objectMovie)
+  }
 
   return (
     <div className="container">
@@ -43,13 +46,24 @@ const App = () => {
       <div className="flex-row">
         <div className="flex-large">
           <h2>Add movie</h2>
-          {/* <form onSubmit={addMovie}>
-            <input
-              value={newMovie}
-              onChange={handleMovieChange}
-            />
-            <button type="submit">save</button>
-          </form> */}
+          <form onSubmit={addMovie}>
+            <label htmlFor="title">Title</label>
+            <input type="text" value={newMovie.title} onChange={handleMovieChange} name="title" />
+
+            <label htmlFor="genre">Genre</label>
+            <input type="text" value={newMovie.genre} onChange={handleMovieChange} name="genre" />
+
+            <label htmlFor="year">Year</label>
+            <input type="text" value={newMovie.year} onChange={handleMovieChange} name="year" />
+
+            <label htmlFor="producer">Producer</label>
+            <input type="text" value={newMovie.producer} onChange={handleMovieChange} name="producer" />
+
+            <label htmlFor="poster">Url Poster</label>
+            <input type="text" value={newMovie.poster} onChange={handleMovieChange} name="poster" />
+            <hr />
+            <button className="button muted-button" type="submit">Save</button>
+          </form>
         </div>
         <div className="flex-large">
           <h2>View movies</h2>

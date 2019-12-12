@@ -21,3 +21,32 @@
 h2 {
   margin-left: 8px;
 }
+
+form {
+  border: 1px solid #dedede;
+  border-radius: 4px;
+  padding: .75rem;
+  outline: none;
+  background: transparent;
+  margin-bottom: .5rem;
+  margin-left: 1.5rem;
+  font-size: 1rem;
+  line-height: 1;
+  width: 87%;
+}
+
+input {
+  max-width: 100%;
+  padding: 12px 10px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+label {
+  font-weight: 600;
+  max-width: 100%;
+  display: block;
+  margin: 1rem 0 .5rem; 
+}
