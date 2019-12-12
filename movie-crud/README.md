@@ -35,6 +35,14 @@
   $ yarn/npm start
   ```
 
+
+## To do
+
+  ```
+  - Tests with Jest
+  - Update method from axios instance to turn a REST Application
+  ```
+
 ## Author
 
 * **Bruno Ramires de Moraes Ferreira** -  [GitHub](https://github.com/brunormferreira)
