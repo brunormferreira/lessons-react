@@ -20,4 +20,10 @@ const deleteMovieById = async (id) => {
     .then(({ data }) => data)
 }
 
-export { getAllMovies, saveMovies, deleteMovieById }
+const updateMovie = (id, updatedMovie) => {
+  return axiosInstance
+    .put(`${pathUrl}/${id}`, updatedMovie)
+    .then(({ data }) => data)
+}
+
+export { getAllMovies, saveMovies, deleteMovieById, updateMovie }

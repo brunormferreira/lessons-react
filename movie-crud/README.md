@@ -39,8 +39,7 @@
 ## To do
 
   ```
-  - Tests with Jest
-  - Update method from axios instance to turn a REST Application
+  -> Test application with Jest
   ```
 
 ## Author

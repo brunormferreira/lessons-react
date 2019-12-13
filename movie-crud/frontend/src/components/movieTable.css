@@ -26,6 +26,10 @@
   border: 1px solid #818181;
 }
 
+table {
+  margin-left: 28px;
+}
+
 th, td {
   border-bottom: 1px solid #ddd;
   border-right: 1px solid #ddd;
