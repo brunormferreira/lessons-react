@@ -94,19 +94,19 @@ const App = () => {
             <h2>Add movie</h2>
             <form onSubmit={addMovie}>
               <label htmlFor="title">Title</label>
-              <input type="text" value={newMovie.title} onChange={handleMovieChange} name="title" />
+              <input type="text" value={newMovie.title} onChange={handleMovieChange} name="title" placeholder="enter movie title" />
 
               <label htmlFor="genre">Genre</label>
-              <input type="text" value={newMovie.genre} onChange={handleMovieChange} name="genre" />
+              <input type="text" value={newMovie.genre} onChange={handleMovieChange} name="genre" placeholder="enter movie genre"/>
 
               <label htmlFor="year">Year</label>
-              <input type="text" value={newMovie.year} onChange={handleMovieChange} name="year" />
+              <input type="text" value={newMovie.year} onChange={handleMovieChange} name="year" placeholder="enter movie year" />
 
               <label htmlFor="producer">Producer</label>
-              <input type="text" value={newMovie.producer} onChange={handleMovieChange} name="producer" />
+              <input type="text" value={newMovie.producer} onChange={handleMovieChange} name="producer" placeholder="enter movie producer" />
 
               <label htmlFor="poster">Url Poster</label>
-              <input type="text" value={newMovie.poster} onChange={handleMovieChange} name="poster" />
+              <input type="text" value={newMovie.poster} onChange={handleMovieChange} name="poster" placeholder="enter the url poster movie" />
               <hr />
             <button className="button basic-button" type="submit">Save</button>
           </form>

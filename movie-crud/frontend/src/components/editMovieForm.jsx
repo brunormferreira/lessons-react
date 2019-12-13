@@ -22,19 +22,19 @@ const EditMovieForm = props => {
       }}
     >
       <label htmlFor="title">Title</label>
-      <input type="text" value={movie.title} onChange={handleEditMovieChange} name="title" />
+      <input type="text" value={movie.title} onChange={handleEditMovieChange} name="title" placeholder="enter movie title" />
 
       <label htmlFor="genre">Genre</label>
-      <input type="text" value={movie.genre} onChange={handleEditMovieChange} name="genre" />
+      <input type="text" value={movie.genre} onChange={handleEditMovieChange} name="genre" placeholder="enter movie genre" />
 
       <label htmlFor="year">Year</label>
-      <input type="text" value={movie.year} onChange={handleEditMovieChange} name="year" />
+      <input type="text" value={movie.year} onChange={handleEditMovieChange} name="year" placeholder="enter movie year" />
 
       <label htmlFor="producer">Producer</label>
-      <input type="text" value={movie.producer} onChange={handleEditMovieChange} name="producer" />
+      <input type="text" value={movie.producer} onChange={handleEditMovieChange} name="producer" placeholder="enter movie producer" />
 
       <label htmlFor="poster">Url Poster</label>
-      <input type="text" value={movie.poster} onChange={handleEditMovieChange} name="poster" />
+      <input type="text" value={movie.poster} onChange={handleEditMovieChange} name="poster" placeholder="enter movie poster" />
       <hr />
       <button className="button rox-button">Update Movie</button>
       <button onClick={() => props.setEditing(false)} className="button basic-button">
