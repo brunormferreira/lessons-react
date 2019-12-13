@@ -3,6 +3,7 @@ import './App.css'
 
 import MovieTable from './components/movieTable';
 import EditMovieForm from './components/editMovieForm'
+import Input from './components/Input'
 import * as MoviesServices from './services/api'
 
 const App = () => {
@@ -56,12 +57,7 @@ const App = () => {
     setEditing(true)
 
     setMovieUpdated({ 
-      id: movie.id, 
-      title: movie.title, 
-      genre: movie.genre, 
-      year: movie.year, 
-      producer: movie.producer, 
-      poster: movie.poster 
+      ...movie
     })
   }
 
@@ -77,6 +73,7 @@ const App = () => {
   return (
     <div className="container">
       <h1>CRUD App-Movies with Hooks</h1>
+      <Input />
       <div className="flex-row">
         <div className="flex-large">
         {editing ? (
