@@ -10,7 +10,6 @@ const App = () => {
 
   const [movies, setMovies] = useState([])
   const [newMovie, setNewMovie] = useState(initialFormState)
-  // eslint-disable-next-line
   const [editing, setEditing] = useState(false)
   const [movieUpdated, setMovieUpdated] = useState(initialFormState)
 
