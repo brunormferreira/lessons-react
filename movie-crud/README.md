@@ -39,7 +39,7 @@
 ## To do
 
   ```
-  -> Test application with Jest
+  -> Do more tests :D
   ```
 
 ## Author
