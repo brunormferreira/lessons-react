@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css'
 
 import MovieTable from './components/movieTable';
@@ -77,7 +77,7 @@ const App = () => {
       <div className="flex-row">
         <div className="flex-large">
         {editing ? (
-          <Fragment>
+          <>
             <h2>Edit movie</h2>
             <EditMovieForm
               editing={editing}
@@ -85,9 +85,9 @@ const App = () => {
               movieUpdated={movieUpdated}
               editMovie={editMovie}
             />
-          </Fragment>
+          </>
         ) : (
-          <Fragment>
+          <>
             <h2>Add movie</h2>
             <form onSubmit={addMovie}>
               <label htmlFor="title">Title</label>
@@ -105,9 +105,9 @@ const App = () => {
               <label htmlFor="poster">Url Poster</label>
               <input type="text" value={newMovie.poster} onChange={handleMovieChange} name="poster" placeholder="enter the url poster movie" />
               <hr />
-            <button className="button basic-button" type="submit">Save</button>
+            <button className="button basic-button" data-testid="submit-button" type="submit">Save</button>
           </form>
-          </Fragment>
+          </>
         )}
         </div>
         <div className="flex-large">

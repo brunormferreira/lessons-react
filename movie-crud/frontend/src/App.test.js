@@ -18,28 +18,46 @@ describe('Movie Form', () => {
     expect(linkElement).toBeInTheDocument();
   });
 
-  it('should submit the form', () => {
-    const { getByText, getByPlaceholderText } = render(<App />)
-
+  it('should handle data input title form', () => {
+    const { getByPlaceholderText } = render(<App />)
     const movieTitleInput = getByPlaceholderText('enter movie title')
     fireEvent.change(movieTitleInput, { target: { value: 'Deadpool' }})
-
-    // const movieGenreInput = getByPlaceholderText('enter movie genre')
-    // movieGenreInput.value = 'action'
-
-    // fireEvent.click(
-    //   getByText('Save')
-    // )
-
-    expect(movieTitleInput).toHaveProperty('value', 'Deadpool')
-    // expect(movieGenreInput.value).toEqual('action')
+    expect(movieTitleInput).toHaveProperty('value', 'Deadpool')   
   })
-  
-  // test('render movie table component', () => {
-  //   const { getByPlaceholderText} = render(<MovieTable />);
-  //   const linkElement = getByPlaceholderText(/enter/i);
-  
-  //   expect(linkElement).toBe(true);
+
+  it('should handle data input genre form', () => {
+    const { getByPlaceholderText } = render(<App />)
+    const movieGenreInput = getByPlaceholderText('enter movie genre')
+    movieGenreInput.value = 'action'
+    expect(movieGenreInput.value).toEqual('action')
+  })
+
+  it('should handle data input year and producer form', () => {
+    const { getByPlaceholderText } = render(<App />)
+    const movieYearInput = getByPlaceholderText('enter movie year')
+    const movieProducerInput = getByPlaceholderText('enter movie producer')
+    fireEvent.change(movieYearInput, { target: { value: '1989' }})
+    movieProducerInput.value = 'Meeko Matram'
+    expect(movieYearInput).toHaveProperty('value', '1989')
+    expect(movieProducerInput.value).toEqual('Meeko Matram')
+  })
+
+  it('should dispair button submit event', () => {
+    const { getByTestId } = render(<App />)
+    const submitButton = getByTestId('submit-button');
+    fireEvent.click(getByTestId('submit-button'))
+    expect(submitButton).toBeInTheDocument();
+  })
+
+  // it.only('should not handle wrong data input', () => {
+  //   const { getByPlaceholderText } = render(<App />)
+  //   const movieTitleInput = getByPlaceholderText('enter movie title')
+  //   movieTitleInput.value = null
+  //   expect(movieTitleInput.value).toBeNull()
   // })
 
+  // it.only('should render image input', () => {
+  //   const movieImageInput = render(<App />);
+  //   expect(movieImageInput.find("img").prop("src")).to.have.length(1)
+  // })
 });
