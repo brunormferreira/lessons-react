@@ -39,7 +39,8 @@
 ## To do
 
   ```
-  -> Do more tests :D
+  -> Implement integration tests with Cypress
+  -> Do more unit tests :D
   ```
 
 ## Author
